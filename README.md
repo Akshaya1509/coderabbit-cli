@@ -4,8 +4,9 @@ CLI takes Github Profile URL as an input and prints the top 5 languages used by 
 
 ### Example Usage 
 1. Clone the repo and cd into the repo.
-2. npm install -g .
-3. `top-5-langs --profile-url https://github.com/NatoBoram`
+2. npm install
+3. npm install -g .
+4. `top-5-langs --profile-url https://github.com/NatoBoram`
 
 
 ### Sample Output
