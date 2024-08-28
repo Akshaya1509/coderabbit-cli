@@ -1,6 +1,6 @@
 # coderabbit-cli
 
-CLI takes Github Profile URL as an input and prints the top 5 languages used by the user.
+CLI takes Github Profile URL as an input and prints the top 5 languages used by the user in his public repositories.
 
 ### Example Usage 
 1. Clone the repo and cd into the repo.
