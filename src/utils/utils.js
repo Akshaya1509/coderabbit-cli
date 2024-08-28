@@ -26,7 +26,7 @@ function getLanguagesCount(languagesMap, languages) {
 }
 
 function getTopN(languagesCountMap, N = TOP_N) {
-    const languagesList = Array.from(languagesCountMap);
+    let languagesList = Array.from(languagesCountMap);
 
     // Sort Languages by Bytes in Descending order
     languagesList.sort((arr1, arr2) => {
