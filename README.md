@@ -3,7 +3,7 @@
 CLI takes Github Profile URL as an input and prints the top 5 languages used by the user in his public repositories.
 
 ### Example Usage 
-1. Clone the repo and cd into the repo.
+1. Clone the repo and `cd` into the repo.
 2. npm install
 3. npm install -g .
 4. Create `.env` file with `GH_AUTH_TOKEN=<your personal access token>`
