@@ -12,7 +12,7 @@ CLI takes Github Profile URL as an input and prints the top 5 languages used by 
 
 ### Sample Output
 ```
-coderabbit-cli % top-5-langs --profile-url https://github.com/NatoBoram
+coderabbit-cli % top-5-langs --profile_url https://github.com/NatoBoram
 Java, 96%
 HTML, 2%
 TypeScript, 1%
