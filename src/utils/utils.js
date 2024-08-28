@@ -49,8 +49,15 @@ function getTopN(languagesCountMap, N = TOP_N) {
     return topN;
 }
 
+function printLanguages(languages) {
+    languages.forEach(language => {
+        console.log(`${language[0]}, ${language[1]}%`);
+    });
+}
+
 export { 
     getUsername, 
     getLanguagesCount,
-    getTopN
+    getTopN,
+    printLanguages
 }

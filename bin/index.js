@@ -2,6 +2,7 @@
 // import yargs from 'yargs';
 import { getUsername } from "../src/utils/utils.js";
 import { GithubAPI } from "../src/lib/GithubAPI.js";
+import { printLanguages } from "../src/utils/utils.js";
 
 async function main() {
     try {
@@ -10,7 +11,7 @@ async function main() {
         const username = getUsername(profileUrl);
 
         const githubTopN = await GithubAPI.getTopNLanguages(username);
-        console.log(githubTopN);
+        printLanguages(githubTopN);
     } catch(err) {
         console.log(err);
     }
