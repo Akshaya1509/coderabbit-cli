@@ -16,11 +16,8 @@ const GithubAPI = (function () {
             .filter(result => result.status === 'fulfilled')
             .map(result => result.value);
         
-        const languagesMap = new Map();
-        getLanguagesCount(languagesMap, languages);
-    
-        const topNLanguages = getTopN(languagesMap);
-        return topNLanguages;
+        const languagesCountMap = getLanguagesCount(languages);
+        return getTopN(languagesCountMap);
     }    
 
     return { getTopNLanguages };
