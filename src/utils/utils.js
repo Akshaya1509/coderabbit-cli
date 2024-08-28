@@ -9,20 +9,22 @@ function getUsername(profileUrl) {
     return pathname;
 }
 
-function getLanguagesCount(languagesMap, languages) {
+function getLanguagesCount(languages) {
     // parse array of languages: [ { <lang>: <bytes> }]
+    const languagesCountMap = new Map();
     for (let obj of languages) {
         for (let [language, bytes] of Object.entries(obj)) {
-            if (languagesMap.has(language)) {
-                languagesMap.set(
+            if (languagesCountMap.has(language)) {
+                languagesCountMap.set(
                     language, 
-                    languagesMap.get(language) + bytes
+                    languagesCountMap.get(language) + bytes
                 );
             } else {
-                languagesMap.set(language, bytes);
+                languagesCountMap.set(language, bytes);
             }
         }
     }
+    return languagesCountMap;
 }
 
 function getTopN(languagesCountMap, N = TOP_N) {
