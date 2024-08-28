@@ -10,34 +10,39 @@ function getUsername(profileUrl) {
 }
 
 function getLanguagesCount(languagesMap, languages) {
-    for (const [language, bytes] of Object.entries(languages)) {
-        if (languagesMap.has(language)) {
-            languagesMap.set(
-                language, 
-                languagesMap.get(language) + bytes
-            );
-        } else {
-            languagesMap.set(language, bytes);
+    // parse array of languages: [ { <lang>: <bytes> }]
+    for (let obj of languages) {
+        for (let [language, bytes] of Object.entries(obj)) {
+            if (languagesMap.has(language)) {
+                languagesMap.set(
+                    language, 
+                    languagesMap.get(language) + bytes
+                );
+            } else {
+                languagesMap.set(language, bytes);
+            }
         }
     }
 }
 
-function getTopN(languagesMap, N = TOP_N) {
-    const languagesList = Array.from(languagesMap);
+function getTopN(languagesCountMap, N = TOP_N) {
+    const languagesList = Array.from(languagesCountMap);
+
     // Sort Languages by Bytes in Descending order
     languagesList.sort((arr1, arr2) => {
         return arr2[1] - arr1[1];
     });
-
+        
     // Get Total Bytes
     const totalBytes = languagesList.reduce((total, item) => {
         return total + item[1];
     }, 0);
 
-    let topN = languagesList.slice(0, N + 1);
     // Calculate percentage of languages
-    topN.map(item => {
-        item[1] = (Math.floor(item[1] / totalBytes)) * 100;
+    languagesList = languagesList.slice(0, N);
+    const topN = languagesList.map(item => {
+        item[1] = Math.round((item[1] * 100) / totalBytes);
+        return item;
     });
     return topN;
 }
