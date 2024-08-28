@@ -4,10 +4,10 @@ import { getLanguagesCount, getTopN } from "../utils/utils.js";
 const GithubAPI = (function () {
     const getTopNLanguages = async function (username) {
         const reposData = await getAllRepos(username);    
-        const repos = reposData.map(repository => repository.name);
+        const repositoryNames = reposData.map(repository => repository.name);
         
         const promises = []; 
-        repos.forEach(repositoryName => {
+        repositoryNames.forEach(repositoryName => {
             promises.push(getAllLanguages(username, repositoryName));
         });
     
