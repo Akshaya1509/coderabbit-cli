@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 // import yargs from 'yargs';
 import { getUsername } from "../src/utils/utils.js";
-import { GithubAPI } from "../src/lib/Github.js";
-// import { Gitlab } from "../src/lib/Gitlab.js";
-
+import { GithubAPI } from "../src/lib/GithubAPI.js";
 
 async function main() {
     try {
@@ -13,8 +11,6 @@ async function main() {
 
         const githubTopN = await GithubAPI.getTopNLanguages(username);
         console.log(githubTopN);
-        // const gitLabTopN = Gitlab.getTopNLanguages(username);
-        
     } catch(err) {
         console.log(err);
     }
