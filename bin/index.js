@@ -8,7 +8,7 @@ import { printLanguages } from "../src/utils/utils.js";
 async function main() {
     try {
         const argv = yargs(hideBin(process.argv))
-            .option('profile-url', {
+            .option('profile_url', {
                 alias: 'url',
                 describe: 'Github profile URL',
                 type: 'string',
