@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "bin": {
     "top-5-langs": "./bin/index.js"
@@ -17,5 +17,8 @@
     "dotenv": "^16.4.5",
     "octokit": "^4.0.2",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

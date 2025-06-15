@@ -1,5 +1,5 @@
-const TOP_N = 5;
+const DEFAULT_TOP_N = 5;
 
 export {
-    TOP_N
+    DEFAULT_TOP_N
 }
